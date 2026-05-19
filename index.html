@@ -47,7 +47,8 @@
 
     </style>
 </head>
-<body>
+<body onkeydown="playFromKeyboard(event)">
+    
 
     <div class="container">
         <div class="letter" onclick="playSound('a')">A</div>
@@ -60,6 +61,16 @@
         function playSound(letter){
             const audio = new Audio(letter + ".mp3");
             audio.play();
+        }
+
+        function playFromKeyboard(event){
+             const key = event.key.toLowerCase();
+
+             if (key === "a" || key === "d" || key === "e"|| key === "r") {
+                playSound(key);
+            }
+            
+                
         }
     </script>
     
